@@ -38,20 +38,69 @@ public class Start {
 
 
 
+    //xpath
+    WebElement el1x = wd.findElement(By.xpath("//*[@id='user']"));
+    WebElement el2x = wd.findElement(By.xpath("//*[@class='username-readonly']"));
+    WebElement el3x = wd.findElement(By.xpath("//*[@data-testid='header-member-menu-button']"));
+
+
+
+
+
+
+
     //log in
     WebElement log1 = wd.findElement(By.cssSelector("[href='/login']"));
+    WebElement log11 = wd.findElement(By.xpath("//*[@href='/login']"));
+
+
     WebElement log2 = wd.findElement(By.cssSelector("#user"));
+    WebElement log22 = wd.findElement(By.xpath("//*[@id='user']"));
+
+
     WebElement log3 = wd.findElement(By.cssSelector("#login"));
+    WebElement log33 = wd.findElement(By.xpath("//*[@id='login']"));
+
+
     WebElement log4 = wd.findElement(By.cssSelector("#password"));
+    WebElement log44 = wd.findElement(By.xpath("//*[@id='password']"));
+
+
     WebElement log5 = wd.findElement(By.cssSelector("#login-submit"));
+    WebElement log55 = wd.findElement(By.xpath("//*[@id='login-submit']"));
+
+
+    WebElement log6 = wd.findElement(By.cssSelector(".m2N684FcksCyfT"));
+    WebElement log66 = wd.findElement(By.xpath("//*[@class='m2N684FcksCyfT']"));
 
 
 
-    //
-    WebElement log11 = wd.findElement(By.cssSelector("[aria-label='Trello']"));
+    //log out
+    WebElement el33c = wd.findElement(By.cssSelector("[data-testid='header-member-menu-button']"));
+    WebElement el33x = wd.findElement(By.xpath("//*[@data-testid='header-member-menu-button']"));
+
+    WebElement ellogc1= wd.findElement(By.cssSelector("[data-testid='header-member-menu-logout']"));
+    WebElement ellogx1= wd.findElement(By.xpath("//*[@data-testid='header-member-menu-logout']"));
+
+
+    WebElement ellogc2 = wd.findElement(By.cssSelector("#logout-submit"));
+    WebElement ellogx2 = wd.findElement(By.xpath("//*[@id='logout-submit']"));
+
+
+    //ends-contains-starts css
+    WebElement log111 = wd.findElement(By.cssSelector("[aria-label='Trello']"));
     WebElement log121 = wd.findElement(By.cssSelector("[aria-label $='llo']"));//ends
     WebElement log31 = wd.findElement(By.cssSelector("[aria-label ^='Tr']"));//starts
     WebElement log41 = wd.findElement(By.cssSelector("[aria-label *='rell']"));//contains
-WebElement log1 = wd.findElement(By.cssSelector("[href='/login']"));
+
+
+    //ends-contains-starts xpath
+    WebElement logx1 = wd.findElement(By.xpath("//*[@aria-label='Trello']"));
+    WebElement logx2 = wd.findElement(By.xpath("//*[contains(@aria-label,'rel')]"));   //contains
+    WebElement logx3 = wd.findElement(By.xpath("//*[starts-with(@aria-label,'Tr')]"));  //starts with
+
+
+
+
 
 }
