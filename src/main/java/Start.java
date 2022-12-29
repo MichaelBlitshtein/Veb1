@@ -2,7 +2,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.util.List;
 
 public class Start {
     WebDriver wd;
@@ -20,6 +23,8 @@ public class Start {
         wd.quit();
 
     }
+
+
     WebElement el1 = wd.findElement(By.tagName("div"));
     WebElement el2 = wd.findElement(By.tagName("a"));
     WebElement el3 = wd.findElement(By.id("user"));
@@ -101,6 +106,38 @@ public class Start {
 
 
 
+    @Test
+    public void tableTest(){
+        //проверь правда ли в таблице 4 строки
+        List<WebElement> rows = wd.findElements(By.cssSelector("tr"));
+                                   //wd.findElement(By.xpath("//tr"));
+        Assert.assertEquals(rows.size(),4);
+
+
+
+        //правда ли, что последняя строка содержит Mexico
+        WebElement lastRow = wd.findElement(By.cssSelector("tr:last-child"));
+                                 //wd.findElement(By.xpath("//tr[last()]"));
+        String text = lastRow.getText();
+        System.out.println(text);   //"Poland Chine Mexico"
+        Assert.assertTrue(text.contains("Mexico"));
+
+
+
+        //правда ли, что последняя ячейка содержит Mexico
+        WebElement lastCell = wd.findElement(By.cssSelector("tr:last-child td:last-child"));
+                                 // wd.findElement(By.xpath("//tr[last()]//td[last()]"));
+        String str = lastCell.getText();
+        Assert.assertTrue(str.contains("Mexico"));
+
+
+        //print Maria Anders
+        System.out.println(wd.findElement(By.cssSelector("tr:nth-child(2) td:nth-child(2)")));
+                            //wd.findElement(By.xpath("//tr[2]//td[2]"));
+                            //wd.findElement(By.xpath("//td[text()='Maria Anders']"));
+
+
+    }
 
 
 }
